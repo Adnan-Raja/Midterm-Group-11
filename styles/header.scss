@@ -9,6 +9,9 @@ header {
   z-index: 1;
 }
 
+a {
+  text-decoration: none;
+}
 
 body {
   display: flex;
@@ -49,3 +52,7 @@ li {
 }
 
 
+.headerfont{
+  font-family:fantasy;
+  font-weight: bold;
+}

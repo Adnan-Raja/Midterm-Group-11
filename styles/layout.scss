@@ -47,3 +47,51 @@ html {
 }
 
 
+.fillbox{
+  height: 400px;
+  width: 400px;
+  background-color:#5ac3ed;
+  margin: 50px;
+
+}
+
+.fillbox-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-right: 10px
+}
+
+.publicquiz-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-page-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wizard-container{
+  display: flex;
+  flex-direction: row;
+  margin-top: 1060px;
+  position: relative;
+   right:400px;
+}
+
+h3 {
+  display: flex;
+  color: black;
+  font-family: fantasy;
+  font-size: 40px;
+  margin-top: 80px;
+  position: relative;
+  left:850px;
+  top: 50px
+}

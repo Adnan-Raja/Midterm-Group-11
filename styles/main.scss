@@ -29,7 +29,7 @@ form {
   width: 100%;
   font-weight: bold;
 }
-  input {
+  .input {
     width: 90%;
     margin: 20px;
     border-radius: 3px;
@@ -44,6 +44,7 @@ form {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+
 
 input {
   margin: 0px;
@@ -63,6 +64,8 @@ button {
 }
 button:hover {
   color:whitesmoke;
-  background-color:#5ac3ed;;
+  background-color:#5ac3ed;
   border: 2px solid whitesmoke
 }
+
+
