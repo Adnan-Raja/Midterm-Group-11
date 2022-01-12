@@ -3,7 +3,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgb(245, 252, 102);
+  background-color: #5ac3ed;
   color: black;
   height: 8vh;
   z-index: 1;
@@ -15,9 +15,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background:rgb(14, 136, 211);
+  background:rgb(255, 255, 255);
 }
-
 
 
 .flex-row {
@@ -43,6 +42,7 @@ li {
 .brand {
   font-size: 1.7em;
 }
+
 .logout_btn {
   padding-right: 40px;
   margin-right: 0;
