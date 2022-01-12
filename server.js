@@ -60,6 +60,9 @@ app.get("/create", (req, res) => {
   res.render("create");
 });
 
+app.get("/myquiz", (req, res) => {
+  res.render("myquiz");
+});
 
 
 
