@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <%- include('partials/header') %>
+</head>
+
+
+<body>
+<!--
+  <div class="main-container">
+    <div id="create-quiz-cont">
+
+      <h1>Create Your Quiz!</h1>
+
+      <label for="name">Quiz Title:</label>
+        <input id="quiz-title" type="text" name="name">
+        <br>
+        <label for="description"> Quiz Description:</label>
+        <input id="quiz-description" type="text" name="description">
+        <br>
+        <div class="privacy">
+          <input id="is-private" type="radio" name="isPrivate" value="true"> Make private?</input>
+          <input id="is-public" type="radio" name="isPrivate" value="false"> Make public?</input>
+          <br>
+        </div>
+        <button type="submit"> Create Questions! </button>
+      </form>
+    </div> -->
+
+    <div class="quiz_body">
+      <div class="card question_body">
+        <form class="question_form_body">
+          <h2 class="question_title">Please Type Test Question</h2>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="question_text"
+              placeholder="Please Type Test Question"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="answer1"
+              placeholder="Answer 1"
+              rows="1"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="answer2"
+              placeholder="Answer 2"
+              rows="1"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="answer3"
+              placeholder="Answer 3"
+              rows="1"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="answer4"
+              placeholder="Answer 4"
+              rows="1"
+            ></textarea>
+          </div>
+          <div class="form-footer">
+            <div>
+              <a href="#" class="back question_form_back"
+                ><i
+                  class="fas fa-angle-double-left"
+                  style="position: inherit"
+                ></i>
+              </a>
+            </div>
+            <div>
+              <h2 class="question_counter">1</h2>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="right_bg"></div>
+    </div>
+</body>
+
+</html>
