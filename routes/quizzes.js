@@ -25,6 +25,17 @@ module.exports = (db) => {
     })
   })
 
+  // the answers page where creators of a quiz can input 5 answers to a question
+
+  router.get("/:quizid/questions/:questionid", (req, res) => {
+    db.query(``, [req.params.questionid])
+      .then(data => {
+        let question = data.rows[0];
+        let templateVars = { quiz_id: req.params.quizid, question_id: req.params.questionid, question };
+        res.render('../views/answers', templateVars);
+      });
+  });
+
 
 
   return router;
