@@ -18,7 +18,45 @@
 
 <h1> My Quizzes</h1>
 <body>
+  <article class="quiz_questions">
+    <div>
+    <ul class="quiz_head">
+      <li><b>Subject</b></li>
+      <li><b>Description</b></li>
+    </ul>
+    </div>
+    <div>
+    <ul class="quiz_list">
+      <% if (rows) { %>
+        <% for (let row of rows) { %>
+        <section class="quiz_body">
+          <div class="width"> <li><%= row.subject %></li></div>
+          <div class="width"><li><%= row.description %></li></div>
 
+          <!-- <li><%= row.quizid %></li> -->
+          <div><% if (row.public) { %>
+            <section>
+              <div class="radio_button">
+              <button class="pupr_button" type="button" id="ajaxBtn" value=<%= [row.public, row.quizid] %>>Public</button>
+            </div>
+            </section>
+
+              <%  } else { %>
+                <section>
+                  <div class="radio_button1">
+                    <button class="pupr_button" type="button" id="ajaxBtn1" value=<%= [row.public, row.quizid] %>>Private</button>
+                  </div>
+            </section>
+            <% } %></div>
+          <div><button class="article_button" type="submit">Start Quiz</button></div>
+
+
+        </section>
+      <% } %>
+      <% } %>
+      </ul>
+      </div>
+  </article>
 
 </body>
 

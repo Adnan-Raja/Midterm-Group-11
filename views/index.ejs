@@ -30,19 +30,27 @@
   <div class="publicquiz-container">
     <div class="fillbox-container">
       <div class="fillbox">
-        <div>
-          <ul class="quiz_list">
-            <% if (rows) { %>
-              <% for (let row of rows) { %>
-              <section class="quiz_body">
-                <li><%= row.subject %></li>
-                <li><%= row.description %></li>
-                <button class="article_button" type="submit">Start Quiz</button>
-              </section>
-            <% } %>
-            <% } %>
-            </ul>
-          </div>1</div>
+        <article class="quiz_questions">
+          <div>
+          <ul class="quiz_head">
+            <li><b>Subject</b></li>
+            <li><b>Description</b></li>
+          </ul>
+          </div>
+          <div>
+            <ul class="quiz_list">
+              <% if (rows) { %>
+                <% for (let row of rows) { %>
+                <section class="quiz_body">
+                  <li><%= row.subject %></li>
+                  <li><%= row.description %></li>
+                  <button class="article_button" type="submit">Start Quiz</button>
+                </section>
+              <% } %>
+              <% } %>
+              </ul>
+            </div>
+        </article></div>
       <div class="fillbox"> 2</div>
       <div class="fillbox">3</div>
 
