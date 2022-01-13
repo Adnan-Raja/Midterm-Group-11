@@ -8,6 +8,23 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
+// Body parser
+const bodyParser = require('body-parser')
+
+// parse application/x-www-form-urlencoded
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+// parse application/json
+app.use(bodyParser.json());
+
+// Cookie session
+const cookieSession = require('cookie-session');
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}))
+
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
@@ -37,37 +54,46 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
+const allQuizRoutes = require("./routes/allquiz-router");
+const createQuiz = require("./routes/createquiz-router");
+const myquiz = require("./routes/myquiz-router");
+const createQuizForm = require("./routes/createquiz_form-router");
+const createQuestionForm = require("./routes/createquestion-router");
+const quizattempt = require("./routes/quizattempt-router");
 
-// Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
+
+// Mount all resource route
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-// Note: mount other resources here, using the same pattern above
 
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
+// Homepage receive all quiz routes
+app.use("/", allQuizRoutes(db));
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+// Create Myquiz page
+app.use("/myquiz", myquiz(db));
 
-app.get("/questions", (req, res) => {
-  res.render("questions");
-});
+// Create quiz page
+app.use("/createquiz", createQuiz(db));
 
-app.get("/create", (req, res) => {
-  res.render("create");
-});
+// Create quiz post
+app.use("/quiz", urlencodedParser, createQuizForm(db));
 
-app.get("/myquiz", (req, res) => {
-  res.render("myquiz");
-});
+// Create question
+app.use("/newquestion", urlencodedParser, createQuestionForm(db));
 
-app.get("/takequiz", (req, res) => {
-  res.render("takequiz");
-});
+// Attempt quiz
+app.use("/quizattempt", urlencodedParser, quizattempt(db));
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+// User cookie session
+app.get('/login/:id', (req, res) => {
+  // cookie-session middleware
+  req.session.user_id = req.params.id;
+  // cookie-parser middleware
+  res.cookie('user_id', req.params.id);
+  // send the user somewhere
+  res.redirect('/');
+ });

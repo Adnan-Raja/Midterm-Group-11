@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Quizlett</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/create_quiz.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <%- include('partials/header') %>
+  </head>
+  <header>
+    <!-- Nav -->
+
+  <body>
+    <form method="POST" action="/quiz">
+      <section class="qform">
+        <label for="qsubject" class="qsubject"><b>Subject</b></label><br>
+        <input type="text" name=subject class="qsubject_qdiscription"><br>
+        <label for="qdiscription" class="qdiscription"><b>Description</b></label><br>
+        <input type="text" name=description class="qsubject_qdiscription"><br>
+        <label for="permissions"><b></b></label><br>
+        <section id="radio_button">
+          <label for="public">Public</label><br>
+          <input type="radio" id="public" name="public_private" value=TRUE>
+           <label for="private">Private</label><br>
+          <input type="radio" id="private" name="public_private" value=FALSE>
+        </section>
+        <button class="quiz_btn" type="submit" value="Submit">Create Quiz</button>
+      </section>
+    </form>
+  </body>
+</html>
