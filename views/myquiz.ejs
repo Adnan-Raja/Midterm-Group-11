@@ -14,13 +14,9 @@
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
     <%- include('partials/header') %>
-
 </head>
 
-<h4> My Quizzes</h4>
-
-
-
+<h1> My Quizzes</h1>
 <body>
   <article class="quiz_questions">
     <div>
@@ -36,7 +32,6 @@
         <section class="quiz_body">
           <div class="width"> <li><%= row.subject %></li></div>
           <div class="width"><li><%= row.description %></li></div>
-
           <!-- <li><%= row.quizid %></li> -->
           <div><% if (row.public) { %>
             <section>
@@ -44,7 +39,6 @@
               <button class="pupr_button" type="button" id="ajaxBtn" value=<%= [row.public, row.quizid] %>>Public</button>
             </div>
             </section>
-
               <%  } else { %>
                 <section>
                   <div class="radio_button1">
@@ -53,8 +47,6 @@
             </section>
             <% } %></div>
           <div><button class="article_button" type="submit">Start Quiz</button></div>
-
-
         </section>
       <% } %>
       <% } %>
