@@ -26,9 +26,23 @@
         Meantime, Checkout Some Quizzes Other Users Have Already Created!
       </div>
     </div>
+
   <div class="publicquiz-container">
     <div class="fillbox-container">
-      <div class="fillbox"> 1</div>
+      <div class="fillbox">
+        <div>
+          <ul class="quiz_list">
+            <% if (rows) { %>
+              <% for (let row of rows) { %>
+              <section class="quiz_body">
+                <li><%= row.subject %></li>
+                <li><%= row.description %></li>
+                <button class="article_button" type="submit">Start Quiz</button>
+              </section>
+            <% } %>
+            <% } %>
+            </ul>
+          </div>1</div>
       <div class="fillbox"> 2</div>
       <div class="fillbox">3</div>
 
