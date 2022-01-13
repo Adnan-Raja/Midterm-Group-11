@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Quiz Wizard</title>
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/question.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <%- include('partials/header') %>
+</head>
+
+
+<body>
+
+  <div class="second-container">
+    <div class="quiz_body">
+      <div class="card question_body">
+        <div class="question_form_body" unSubmit="defaultAdd()">
+          <h2 class="question_title">Please Type Test Question & Answers</h2>
+          <div class="form-group">
+            <textarea class="t-area" id="question_text" placeholder="Please Type Test Question" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <textarea class="q-options" placeholder="answer 1"></textarea>
+          </div>
+
+          <div class="form-group">
+            <textarea class="q-options" placeholder="answer 2"></textarea>
+
+           
+          </div>
+          <div class="form-group">
+            <textarea class="q-options" placeholder="answer 3"></textarea>
+
+
+          </div>
+          <div class="form-group">
+            <textarea class="q-options" placeholder="answer 4"></textarea>
+
+          </div>
+          <br> <br>
+          <label id="correct-option">Correct Option</label>
+      <div class="form-group">
+        <textarea class="q-options" placeholder="Correct Option"></textarea>
+      </div>
+
+        <div>
+          <button type="submit"  class="btn btn-dark">Submit</button>
+        </div>
+        <span id="counter"> 1</span>
+      </div>
+    </div>
+    <div class="right_bg"></div>
+  </div>
+</div>
+
+<script>
+
+let counterbtn = document.querySelector(".btn-dark")
+ let count = 1
+ counterbtn.addEventListener("click",()=> {
+   count++
+   if(count<= 5){
+    document.getElementById("counter").innerHTML=count
+   } else {
+     window.location.href="/myquiz"
+   }
+
+ })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+
+
+.privatequiz-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1000px;
+}
+
+.fillbox-container2{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-right: 10px
+}
+h4{
+  display: flex;
+  color: black;
+  font-family: fantasy;
+  font-size: 40px;
+  margin-top: 80px;
+  position: relative;
+  left:850px;
+  bottom: 90px
+}

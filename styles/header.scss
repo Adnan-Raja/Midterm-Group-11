@@ -1,0 +1,58 @@
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #5ac3ed;
+  color: black;
+  height: 8vh;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background:rgb(255, 255, 255);
+}
+
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  height: 100%;
+}
+
+
+ .header-link {
+  color: black;
+  margin: auto;
+}
+
+
+li {
+  list-style: none;
+  margin: 0 16px;
+  cursor: pointer;
+}
+.brand {
+  font-size: 1.7em;
+}
+
+.logout_btn {
+  padding-right: 40px;
+  margin-right: 0;
+}
+
+
+.headerfont{
+  font-family:fantasy;
+  font-weight: bold;
+}

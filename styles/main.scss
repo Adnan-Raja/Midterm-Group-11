@@ -1,17 +1,71 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-
-  background: rgb(163, 208, 219);
-  background: linear-gradient(
-    227deg,
-    rgba(163, 208, 219, 1) 0%,
-    rgba(163, 176, 219, 1) 20%,
-    rgba(163, 173, 219, 1) 34%,
-    rgba(163, 219, 208, 1) 59%,
-    rgba(163, 208, 219, 1) 74%,
-    rgba(163, 208, 219, 1) 100%
-  );
+.main_image{
+  border-radius: 50%;
 }
+
+.body
+{margin: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#create-quiz-cont  {
+  margin: 20px;
+  background-color: #5ac3ed;
+  width: 100%;
+  min-height: 600px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+}
+  .input {
+    width: 90%;
+    margin: 20px;
+    border-radius: 3px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+.privacy {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+
+input {
+  margin: 0px;
+  padding: 0px;
+  width: 5%;
+  justify-content: space-evenly;
+}
+}
+
+button {
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  margin: 20px;
+}
+button:hover {
+  color:whitesmoke;
+  background-color:#5ac3ed;
+  border: 2px solid whitesmoke
+}
+
+

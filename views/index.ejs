@@ -2,19 +2,44 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
 
+  <title>Quiz Wizard</title>
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/question.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
+  <%- include('partials/header') %>
 </head>
 
+
 <body>
-  <h1>Have fun! 🥔</h1>
+<h3> Public Quizzes </h3>
+  <div class="main-page-container">
+    <div class="wizard-container">
+      <img class="main_image"
+        src="https://www.people-clipart.com/people_clipart_images/people_cartoon_wizard_in_sorcerers_robe_and_a_magic_wand_0521-1010-2714-0148_SMU.jpg">
+      <div class="bubble"> Hey There! I'm Wiz, The Quiz Wizard. I'm Super Excited to See What Quizzes You Create. In the
+        Meantime, Checkout Some Quizzes Other Users Have Already Created!
+      </div>
+    </div>
+  <div class="publicquiz-container">
+    <div class="fillbox-container">
+      <div class="fillbox"> 1</div>
+      <div class="fillbox"> 2</div>
+      <div class="fillbox">3</div>
+
+    </div>
+    <div class="fillbox-container">
+      <div class="fillbox"> 4</div>
+      <div class="fillbox"> 5</div>
+      <div class="fillbox"> 6</div>
+    </div>
+  </div>
+  </div>
 </body>
 
 </html>
