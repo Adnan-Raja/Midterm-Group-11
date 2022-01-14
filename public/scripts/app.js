@@ -42,4 +42,6 @@ $(document).ready(function() {
         console.log(this.value);
       }
     });
+
+    // event handler for share button click
   });

@@ -9,24 +9,11 @@
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/createquestion.css" type="text/css" />
+    <%- include('partials/header') %>
   </head>
   <header>
     <!-- Nav -->
-    <section class="nav_logo">
-      <h1><a href="http://localhost:8080/">Quiz!</a></h1>
-    </section>
-    <section>
-      <nav>
-          <ul class="nav_links">
-           <li><a href="http://localhost:8080/">Home</a></li>
-           <li><a href="http://localhost:8080/createquiz">Create Quiz</a></li>
-           <li><a href="#">Start Quiz</a></li>
-           <li><a href="http://localhost:8080/myquiz">My Quiz</a></li>
-           <li><a href="#">Logout</a></li>
-          </ul>
-        </nav>
-      </section>
-    </span>
+
   </header>
   <body>
       <% if (questionTotal < 5) { %>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Quizlett</title>
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/myquiz.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/question.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+    <%- include('partials/header') %>
+  </head>
+
+    <!-- Nav -->
+
+  <body>
+    
+    <div class="main-container">
+      <div id="create-quiz-cont">
+
+        <h1>Create Your Quiz!</h1>
+        <form method="POST" action="/quiz">
+        <label for="name">Quiz Title:</label>
+        <!-- <input type="text" name=subject class="qsubject_qdiscription"><br> -->
+          <input class="input" id="quiz-title" type="text" name="subject">
+          <br>
+          <label for="description"> Quiz Description:</label>
+          <!-- <input type="text" name=description class="qsubject_qdiscription"><br> -->
+          <input class="input"id="quiz-description" type="text" name="description">
+          <br>
+          <div class="privacy">
+            <input class="input" id="is-private" type="radio" name="public_private" value=TRUE> Private</input>
+            <input class ="input" id="is-public" type="radio" name="public_private" value=FALSE> Public</input>
+            <br>
+          </div>
+          <a href="http://localhost:8080/questions" >
+
+
+          <button type="submit"> Create Questions! </button>
+          </a>
+        </form>
+      </div>
+  </body>
+</html>
