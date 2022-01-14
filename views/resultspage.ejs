@@ -6,10 +6,8 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/create_quiz.css" type="text/css" />
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
-
   </head>
   <header>
     <!-- Nav -->
@@ -27,22 +25,26 @@
         </nav>
       </section>
     </span>
+  </header>
   <body>
-    <form method="POST" action="/quiz">
-      <section class="qform">
-        <label for="qsubject" class="qsubject"><b>Subject</b></label><br>
-        <input type="text" name=subject class="qsubject_qdiscription"><br>
-        <label for="qdiscription" class="qdiscription"><b>Description</b></label><br>
-        <input type="text" name=description class="qsubject_qdiscription"><br>
-        <label for="permissions"><b></b></label><br>
-        <section id="radio_button">
-          <label for="public">Public</label><br>
-          <input type="radio" id="public" name="public_private" value=TRUE>
-           <label for="private">Private</label><br>
-          <input type="radio" id="private" name="public_private" value=FALSE>
-        </section>
-        <button class="quiz_btn" type="submit" value="Submit">Create Quiz</button>
-      </section>
-    </form>
+   <div class="mainbody">
+        <img  class="main_image" src="https://media.istockphoto.com/vectors/quiz-in-comic-pop-art-style-quiz-brainy-game-word-vector-illustration-vector-id1186386668?k=20&m=1186386668&s=612x612&w=0&h=tUvqWXoNa2OsJ1YsvZwr3JKOggtzfr_KHuopigindPA=" alt="midterm_group_5">
+        <div>
+
+            <div class= "resultsmain">
+              <b>Here are your results for </b> Web Developement Quiz
+            </div>
+            <div class= "resultsmain2">
+                You scored: <b>   5/5 </b>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
   </body>
 </html>
+
