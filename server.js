@@ -60,6 +60,7 @@ const myquiz = require("./routes/myquiz-router");
 const createQuizForm = require("./routes/createquiz_form-router");
 const createQuestionForm = require("./routes/createquestion-router");
 const quizattempt = require("./routes/quizattempt-router");
+const getquiz = require("./routes/getquiz");
 
 
 // Mount all resource route
@@ -68,6 +69,8 @@ app.use("/api/widgets", widgetsRoutes(db));
 
 // Homepage receive all quiz routes
 app.use("/", allQuizRoutes(db));
+
+app.use("/getquiz", getquiz(db));
 
 // Create Myquiz page
 app.use("/myquiz", myquiz(db));

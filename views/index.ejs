@@ -17,7 +17,6 @@
 
 
 <body>
-<h3> Public Quizzes </h3>
   <div class="main-page-container">
     <div class="wizard-container">
       <img class="main_image"
@@ -27,41 +26,46 @@
       </div>
     </div>
 
-  <div class="publicquiz-container">
-    <div class="fillbox-container">
-      <div class="fillbox">
-        <article class="quiz_questions">
-          <div>
-          <ul class="quiz_head">
-            <li><b>Subject</b></li>
-            <li><b>Description</b></li>
-          </ul>
-          </div>
-          <div>
-            <ul class="quiz_list">
+
+    <div class="fillbox">
+      <article class="quiz_questions">
+        <div>
+
+            <table>
+              <tr>
+                <th>Subject</th>
+                <th>Description</th>
+              </tr>
+
               <% if (rows) { %>
                 <% for (let row of rows) { %>
-                <section class="quiz_body">
-                  <li><%= row.subject %></li>
-                  <li><%= row.description %></li>
-                  <button class="article_button" type="submit">Start Quiz</button>
-                </section>
-              <% } %>
-              <% } %>
-              </ul>
-            </div>
-        </article></div>
-      <div class="fillbox"> 2</div>
-      <div class="fillbox">3</div>
+                  <tr>
+                    <td class="maintable">
+                      <%= row.subject %>
+                    </td>
+                    <td>
+                      <%= row.description %>
+                    </td>
+                    <td>
+                      <button class="article_button" type="submit">Start Quiz</button>
+                      <button class="article_button" id=<%= row.id %> type="submit">Share</button>
+                    </td>
+                  </tr>
 
+               <% } %>
+              <% } %>
+
+            </table>
+
+
+        </div>
+      </article>
     </div>
-    <div class="fillbox-container">
-      <div class="fillbox"> 4</div>
-      <div class="fillbox"> 5</div>
-      <div class="fillbox"> 6</div>
-    </div>
-  </div>
-  </div>
+
+    
+    <article class="quiz_questions">
+      <div>
+
 </body>
 
 </html>
