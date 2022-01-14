@@ -14,12 +14,22 @@
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
     <%- include('partials/header') %>
+
 </head>
 
-<h1> My Quizzes</h1>
+
 <body>
-  <article class="quiz_questions">
+  
+  <div class="main-page-container2">
+    <div class="wizard-container2">
+      <img class="main_image"
+        src="https://www.people-clipart.com/people_clipart_images/people_cartoon_wizard_in_sorcerers_robe_and_a_magic_wand_0521-1010-2714-0148_SMU.jpg">
+      <div class="bubble2"> Don't forget to share the quizzes you've created with your family and friends!
+    </div>
+  </body>
+
     <div>
+ <article class="quiz_questions">
     <ul class="quiz_head">
       <li><b>Subject</b></li>
       <li><b>Description</b></li>
@@ -32,7 +42,6 @@
         <section class="quiz_body">
           <div class="width"> <li><%= row.subject %></li></div>
           <div class="width"><li><%= row.description %></li></div>
-          <!-- <li><%= row.quizid %></li> -->
           <div><% if (row.public) { %>
             <section>
               <div class="radio_button">
@@ -53,8 +62,5 @@
       </ul>
       </div>
   </article>
-
 </body>
-
-
 </html>
