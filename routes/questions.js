@@ -13,9 +13,6 @@ module.exports = (db) => {
         res.render('../views/questions', templateVars);
       });
   });
-<<<<<<< Updated upstream
-}
-=======
 
   // adding the inputted answers to the database
 
@@ -45,4 +42,3 @@ module.exports = (db) => {
   });
   return router;
 };
->>>>>>> Stashed changes
