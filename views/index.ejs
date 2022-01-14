@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Quizlett</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/clipboard.js"></script> -->
+    <%- include('partials/header') %>
+  </head>
+  <header>
+    <!-- Nav -->
 
-<head>
-
-  <title>Quiz Wizard</title>
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/question.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-  <%- include('partials/header') %>
-</head>
-
-
-<body>
-  <div class="main-page-container">
-    <div class="wizard-container">
-      <img class="main_image"
-        src="https://www.people-clipart.com/people_clipart_images/people_cartoon_wizard_in_sorcerers_robe_and_a_magic_wand_0521-1010-2714-0148_SMU.jpg">
-      <div class="bubble"> Hey There! I'm Wiz, The Quiz Wizard. I'm Super Excited to See What Quizzes You Create. In the
-        Meantime, Checkout Some Quizzes Other Users Have Created Below!
-      </div>
-    </div>
-
-
-    <div class="fillbox">
+  </header>
+  <body>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <p id="p1">P1: I am paragraph 1</p> <p id="p2">P2: I am a second paragraph</p> <button onclick="copyToClipboard('#p1')">Copy P1</button> <button onclick="copyToClipboard('#p2')">Copy P2</button> <br/><br/><input type="text" placeholder="Paste here for test" /> -->
+        </div>
+      </form>
       <article class="quiz_questions">
         <div>
-
-            <table>
-              <tr>
-                <th>Subject</th>
-                <th>Description</th>
-              </tr>
-
-              <% if (rows) { %>
-                <% for (let row of rows) { %>
-                  <tr>
-                    <td class="maintable">
-                      <%= row.subject %>
-                    </td>
-                    <td>
-                      <%= row.description %>
-                    </td>
-                    <td>
-                      <button class="article_button" type="submit">Start Quiz</button>
-                      <button class="article_button" id=<%= row.id %> type="submit">Share</button>
-                    </td>
-                  </tr>
-
-               <% } %>
-              <% } %>
-
-            </table>
-
-
+        <ul class="quiz_head">
+          <li><b>Subject</b></li>
+          <li><b>Description</b></li>
+        </ul>
         </div>
+        <div>
+          <ul class="quiz_list">
+            <% if (rows) { %>
+              <% for (let row of rows) { %>
+              <section class="quiz_body">
+
+                <li id="subject"><%= row.subject %></li>
+                <li id="description"><%= row.description %></li>
+
+                  <button id="startquiz-button" class="article_button" type="submit"><a href="/quizpage/<%= row.id %>" class="article_button">Start Quiz</a></button>
+                  <button id="clipboardlink" class="article_button" type="submit"><a href="http://localhost:8080/quizpage/?subject=Web%20Developement&description=Junior%20developer%20interview%20questions">Share Quiz</a></button>
+
+              </section>
+            <% } %>
+            <% } %>
+            </ul>
+          </div>
+          <div id="myPopup" class="modal">
+            <!-- Popupt -->
+              <div class="popup-content">
+                <span class="close">&times;</span>
+
+                <p> Copy the quiz link to share with a friend!  </p>
+                <p> Quiz URL: <input style="width: 78%;" value="http://localhost:8080/quizpage/?subject=Web%20Developement&description=Junior%20developer%20interview%20questions"> </input>  </p>
+              </div>
+
+           </div>
       </article>
-    </div>
-
-    
-    <article class="quiz_questions">
-      <div>
-
-</body>
-
+  </body>
 </html>
+ <script>
+
+  document.getElementById('clipboardlink').onclick = function () {
+    event.preventDefault();
+    // alert("You've submitted the quiz, you got 4/5 correct")
+    //create a  popup
+    var modal = document.getElementById("myPopup");
+    modal.style.display = "block";
+
+    // Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+  modal.style.display = "none";
+}
+  }
+</script>

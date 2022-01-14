@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Quizlett</title>
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/questionvaluechanger.js"></script>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/createquestion.css" type="text/css" />
+    <%- include('partials/header') %>
+  </head>
+  <header>
+    <!-- Nav -->
 
-<head>
-
-  <title>Quiz Wizard</title>
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/question.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-  <%- include('partials/header') %>
-</head>
-
-
+  </header>
   <body>
-
-
-    <div class="second-container">
-      <div class="quiz_body">
+      <% if (questionTotal < 5) { %>
         <form method="POST" action="/newquestion">
-        <div class="card question_body">
-          <div class="question_form_body" >
-            <h2 class="question_title">Please Type Test Question & Answer</h2>
-            <input type="hidden" name="quizid" value="<%= id %>">
-            <div class="form-group">
-              <textarea class="t-area" id="question_text" name="question" placeholder="Please Type Test Question" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-              <textarea class="q-options" name="answer" placeholder="Answer"></textarea>
-            </div>
-            <br> <br>
-          <div>
-            <button type="submit"  class="btn btn-dark">Submit</button>
-          </div>
-        </div>
-      </form>
-      </div>
-      <div class="right_bg"></div>
-    </div>
-  </div>
+      <section>
+        <div id="counter"><h1 class="text"> Question #</h1><h1 id="value">
+        <% if (questionTotal < 5) { %>
+          <%=  questionTotal + 1 %>
+        <% } %>
+        </h1></div>
+        <label for="question"><b>Question </b></label>
+        <input type="hidden" name="quizid" value="<%= id %>">
+        <input type="text"class="question_name" name="question">
+        <label for="answer"><b>Answer</b></label>
+        <input type="text" class="question_name" name="answer">
+        <button class="create_question" type="submit" value="Submit">Submit Question</button>
+        <button class="create_reset" type="reset" style="display:none;" >Submit Question</button>
+      </section>
+    </form>
+      <% } %>
+    <% if (questionTotal === 5) { %>
+      <form method="GET" action="/myquiz">
+      <section>
+        <h1>Thak you for completing your quiz!</h1>
+        <button class="create_question" type="submit" value="Submit">See My Quiz</button>
+      </section>
+    </form>
+      <% } %>
   </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Quizlett</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+  </head>
+  <header>
+    <!-- Nav -->
+    <section class="nav_logo">
+      <h1><a href="http://localhost:8080/">Quiz!</a></h1>
+    </section>
+    <section>
+      <nav>
+          <ul class="nav_links">
+            <li><a href="http://localhost:8080/createquiz">Create Quiz</a></li>
+            <li><a href="#">Start Quiz</a></li>
+            <li><a href="http://localhost:8080/myquiz">My Quiz</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </nav>
+      </section>
+    </span>
+  </header>
+  <body>
+   <div class="mainbody">
+    <img class="main_image" src="https://media.istockphoto.com/vectors/quiz-in-comic-pop-art-style-quiz-brainy-game-word-vector-illustration-vector-id1186386668?k=20&m=1186386668&s=612x612&w=0&h=tUvqWXoNa2OsJ1YsvZwr3JKOggtzfr_KHuopigindPA=" alt="midterm_group_5">
+      <article>
+        <div>
+          <% if(questions) { %>
+
+        </div>
+      </article>
+      <article class=quiz_questions>
+
+          <form method="GET" action="/results">
+            <% for (let item of questions) { %>
+              <!-- <ul>
+                <li>item.question</li>
+              <li>item.question</li>
+            </ul> -->
+            <div id="counter"><h4 class="text"> Question # </h4><h4 class="valueTwo"></h4></div><p><%= item.question %></p>
+           <% for (let keys of item.options) { %>
+            <input type="radio"  name="<%= item.question %>" value="<%= keys.answer %>">
+            <%= keys.answer %>
+            <% } %>
+            <% } %>
+            <button  id="finish-quiz" type="submit" > Submit </button>
+          </form>
+          <div id="myPopup" class="modal">
+            <!-- Popupt -->
+            <div class="popup-content">
+              <span class="close">&times;</span>
+              <p>Congratulations, you've gotten 5/5!</p>
+              <p> Copy the results link to share how you did with a friend!  </p>
+              <p> Results URL: <input style="width: 78%;" value="http://localhost:8080/results"> </input>  </p>
+            </div>
+          </div>
+      </article>
+      <% } %>
+  </body>
+</html>
