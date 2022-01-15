@@ -2,21 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Quizlett</title>
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/myquiz.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <title>Quiz Wizard</title>
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/myquiz.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/question.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
     <%- include('partials/header') %>
 
 </head>
 
 
-<body>
+<!-- <body>
 
-  <div class="main-page-container2">
+  <!-- <div class="main-page-container2"> -->
     <div class="wizard-container2">
       <img class="main_image"
         src="https://www.people-clipart.com/people_clipart_images/people_cartoon_wizard_in_sorcerers_robe_and_a_magic_wand_0521-1010-2714-0148_SMU.jpg">
@@ -24,44 +27,46 @@
     </div>
   </body>
 
-    <div>
- <article class="quiz_questions">
-    <ul class="quiz_head">
-      <li><b>Subject</b></li>
-      <li><b>Description</b></li>
-    </ul>
-    </div>
-    <div>
-    <ul class="quiz_list">
-      <% if (rows) { %>
-        <% for (let row of rows) { %>
-        <section class="quiz_body">
-          <div class="width"> <li><%= row.subject %></li></div>
-          <div class="width"><li><%= row.description %></li></div>
-          <div><% if (row.public) { %>
-            <section>
-              <div class="radio_button">
-              <button class="pupr_button" type="button" id="ajaxBtn" value=<%= [row.public, row.quizid] %>>Public</button>
-            </div>
-            </section>
-              <%  } else { %>
-                <section>
-                  <div class="radio_button1">
-                    <button class="pupr_button" type="button" id="ajaxBtn1" value=<%= [row.public, row.quizid] %>>Private</button>
-                  </div>
-            </section>
-            <% } %></div>
-          <div><button class="article_button" type="submit">Start Quiz</button></div>
-        </section>
-      <% } %>
-      <% } %>
+  </span>
+</header>
+<body>
+    <article class="quiz_questions">
+      <div>
+      <ul class="quiz_head">
+        <li><b>Subject</b></li>
+        <li><b>Description</b></li>
       </ul>
       </div>
-  </article>
+      <div>
+      <ul class="quiz_list">
+        <% if (rows) { %>
+          <% for (let row of rows) { %>
+          <section class="quiz_body">
+            <li><%= row.subject %></li>
+           <li><%= row.description %></li>
+            <!-- <li><%= row.quizid %></li> -->
+            <div><% if (row.public) { %>
+              <section>
+                <div class="radio_button">
+                <button class="pupr_button" type="button" id="ajaxBtn" value=<%= [row.public, row.quizid] %>>Public</button>
+              </div>
+              </section>
+                <%  } else { %>
+                  <section>
+                    <div class="radio_button1">
+                      <button class="pupr_button" type="button" id="ajaxBtn1" value=<%= [row.public, row.quizid] %>>Private</button>
+                    </div>
+              </section>
+              <% } %></div>
+            <div><button class="article_button" type="submit"><a href="/quizpage/<%= row.quizid %>">Start Quiz</a></button></div>
+          </section>
+        <% } %>
+        <% } %>
+        </ul>
+        </div>
+    </article>
 </body>
 </html>
-
-
 
 
 
