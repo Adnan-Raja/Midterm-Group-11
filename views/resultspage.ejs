@@ -1,35 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Quiz Wizard</title>
+    <title>Quizlett</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/myquiz.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/question.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-    <%- include('partials/header') %>
+    <link rel="stylesheet" href="/styles/resultspage.css" type="text/css" />
+    <!-- <%- include('partials/header') %> -->
   </head>
+  <header>
+    <div class="headerfont">
+      <ul class="flex-row">
+        <div class="flex-row">
+          <li class="brand brand_btn">
+            <a href="/" class="header-link">Quiz Wizard</a>
+          </li>
+
+          <li class="create_btn">
+            <a href="/createquiz" class="header-link">Create a Quiz</a>
+          </li>
+
+          <li class="myQuiz_btn">
+            <a href="/myquiz" class="header-link">My Quizzes</a>
+          </li>
+          <li class="pastQuiz_btn">
+            Past Quiz Attempts
+          </li>
+        </div>
+        <div class="flex-row">
+          <li class="logout_btn" id="logout">Logout</li>
+        </div>
+      </ul>
+    </div>
+  </header>
+
+
   <body>
 
 
-            <div class= "resultsmain">
+            <!-- <div class= "resultsmain">
               <b>Here are your results for </b>
             </div>
             <div class= "resultsmain2">
                 You scored: <b>   5/5 </b>
             </div>
 
-        </div>
+        </div> -->
+    </div>
+    <div class="main-container">
+      <div class="results">
+        <h1>Your Quiz Result!</h1>
+        You scored: <b>   5/5 </b>
+      </div>
+      <div class="quiz-redirect">Take another quiz!</div></a>
     </div>
 
 
 
-
-
   </body>
-</html>
 
+</html>
