@@ -23,7 +23,7 @@
       </article>
       <article class=quiz_questions>
 
-          <form method="GET" action="/results">
+          <form method="POST" action="/attempt/submit">
             <% for (let item of questions) { %>
               <!-- <ul>
                 <li>item.question</li>
@@ -31,7 +31,7 @@
             </ul> -->
             <div id="counter"><h4 class="text"> Question # </h4><h4 class="valueTwo"></h4></div><p><%= item.question %></p>
            <% for (let keys of item.options) { %>
-            <input type="radio"  name="<%= item.question %>" value="<%= keys.answer %>">
+            <input type="radio"  id="answer" name="<%= item.id %>" value="<%= keys.answer %>">
             <%= keys.answer %>
             <% } %>
             <% } %>

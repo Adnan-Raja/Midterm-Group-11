@@ -10,6 +10,7 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/resultspage.css" type="text/css" />
+    <script type="text/javascript" src="./scripts/Attempts.js"></script>
     <!-- <%- include('partials/header') %> -->
   </head>
   <header>
@@ -54,7 +55,7 @@
     <div class="main-container">
       <div class="results">
         <h1>Your Quiz Result!</h1>
-        You scored: <b>   5/5 </b>
+        You scored: <b>   <output name="score" class="score"><%= result.results %>/5</output> </b>
       </div>
       <div class="quiz-redirect">Take another quiz!</div></a>
     </div>

@@ -63,6 +63,7 @@ const createQuestionForm = require("./routes/createquestion-router");
 const goToQuizPage = require("./routes/gotoquizpage");
 const goToResultsPage= require("./routes/gotoresultspage");
 const getquiz = require("./routes/getquiz");
+const quizattempt = require("./routes/quizattempt-router");
 
 // Mount all resource route
 app.use("/api/users", usersRoutes(db));
@@ -86,7 +87,7 @@ app.use("/quiz", urlencodedParser, createQuizForm(db));
 app.use("/quizpage", goToQuizPage(db));
 
 // Go To Results Page
-app.use("/results", goToResultsPage())
+app.use("/results", goToResultsPage(db));
 
 // Create Search Results page
 app.use("/searchresults", searchRoutes(db));
@@ -95,7 +96,7 @@ app.use("/searchresults", searchRoutes(db));
 app.use("/newquestion", urlencodedParser, createQuestionForm(db));
 
 // Attempt quiz
-//app.use("/quizattempt", urlencodedParser, quizattempt(db));
+app.use("/attempt", urlencodedParser, quizattempt(db));
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

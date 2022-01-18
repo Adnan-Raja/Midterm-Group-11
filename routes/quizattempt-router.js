@@ -19,6 +19,28 @@ module.exports = (db) => {
       });
   });
 
+  router.post("/submit", async (req, res) => {
+    console.log(req.body);
+    let count = 0;
+    let quiz_id;
+    for (const id in req.body) {
+      const result = await db.query(`
+      SELECT * FROM questions
+      WHERE id = $1`, [id])
+      quiz_id = result.rows[0].quiz_id;
+      const user_answer = req.body[id];
+      const right_answer = result.rows[0].answer;
+      if (user_answer === right_answer) {
+        count += 1;
+      }
+    }
+    const inserted = await db.query(`
+    INSERT INTO quiz_results (quiz_id, user_id, results, time_completed) values ($1, $2, $3, $4) returning *`,
+    [quiz_id, req.session.user_id, count, new Date()])
+    console.log(inserted.rows);
+    res.redirect(`/results/${inserted.rows[0].id}`)
+  });
+
   // router.post("/public", (req, res) => {
   //   console.log("+++++", req.body)
   //   const public = req.body.public
