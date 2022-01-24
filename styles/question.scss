@@ -75,7 +75,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 500px;
+  margin-top: 50px;
   background-color: #7bcff0;
 };
 
@@ -83,3 +83,13 @@ a {
   font-family: fantasy;
   font-style: bold;
 }
+#counter {
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 10px;
+  display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+

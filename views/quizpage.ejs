@@ -1,76 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Quiz!</title>
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script>
-  function shuffleArray(array) {
-  let curId = array.length;
-  // There remain elements to shuffle
-  while (0 !== curId) {
-    // Pick a remaining element
-    let randId = Math.floor(Math.random() * curId);
-    curId -= 1;
-    // Swap it with the current element.
-    let tmp = array[curId];
-    array[curId] = array[randId];
-    array[randId] = tmp;
-  }
-  console.log(questions.options.answer)
-  return array;
-}
-  </script>
+    <title>Quiz Wizard</title>
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/myquiz.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/question.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+    <%- include('partials/header') %>
   </head>
-  <header>
-
-  </header>
   <body>
-   <div class="mainbody">
+    <div class="mainbody">
 
-      <article>
-        <div>
-          <% if(questions) { %>
-        </div>
-      </article>
-      <article class=quiz_questions>
-          <form method="GET" action="/results">
-            <% for (let item of questions) { %>
-            <div id="counter"><h4 class="text"></h4><h3 class="valueTwo"></h3></div>
-            <p><%= item.question %></p>
-            <!-- Answer shuffle function -->
-            <% function shuffleArray(array) {
-              let curId = array.length;
-              // There remain elements to shuffle
-              while (0 !== curId) {
-                // Pick a remaining element
-                let randId = Math.floor(Math.random() * curId);
-                curId -= 1;
-                // Swap it with the current element.
-                let tmp = array[curId];
-                array[curId] = array[randId];
-                array[randId] = tmp;
-              }
-              return array;
-            } %>
-              <% for (let keys of shuffleArray(item.options)) { %>
-                <div class="startquizform">
-                  <section class="radio_button">
-                <input type="radio"  name="<%= item.question %>" value="<%= keys.answer %>">
-                <%= keys.answer %>
-                  </section>
-                </div>
-              <% } %>
-            <% } %>
-            <button  id="finish-quiz" type="submit" > Submit </button>
-          </form>
-
-      </article>
-      <% } %>
-  </body>
+       <article>
+         <div>
+           <% if(questions) { %>
+         </div>
+       </article>
+       <article class=quiz_questions>
+           <form method="GET" action="/results">
+             <% for (let item of questions) { %>
+             <div id="counter"><h4 class="text"></h4><h3 class="valueTwo"></h3></div>
+             <p><%= item.question %></p>
+             <!-- Answer shuffle function -->
+             <% function shuffleArray(array) {
+               let curId = array.length;
+               // There remain elements to shuffle
+               while (0 !== curId) {
+                 // Pick a remaining element
+                 let randId = Math.floor(Math.random() * curId);
+                 curId -= 1;
+                 // Swap it with the current element.
+                 let tmp = array[curId];
+                 array[curId] = array[randId];
+                 array[randId] = tmp;
+               }
+               return array;
+             } %>
+               <% for (let keys of shuffleArray(item.options)) { %>
+                 <div class="startquizform">
+                   <section class="radio_button">
+                 <input type="radio"  name="<%= item.id %>" value="<%= keys.answer %>">
+                 <%= keys.answer %>
+                   </section>
+                 </div>
+               <% } %>
+             <% } %>
+             <button  id="finish-quiz" type="submit" > Submit </button>
+           </form>
+           <div id="myPopup" class="modal">
+             <!-- Popupt -->
+             <div class="popup-content">
+               <span class="close">&times;</span>
+               <p>Congratulations, you've gotten 5/5!</p>
+               <p>Copy the results link to share how you did with a friend!</p>
+               <p>Results URL: <input style="width: 78%;" value="http://localhost:8080/results"> </input>  </p>
+             </div>
+           </div>
+       </article>
+       <% } %>
+   </body>
 </html>
 

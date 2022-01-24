@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Quiz!: Home</title>
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <!-- <script type="text/javascript" src="/scripts/clipboard.js"></script> -->
-    <%- include('partials/header') %>
-  </head>
-  <header>
 
-  </header>
+<head>
+
+  <title>Quiz Wizard</title>
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/question.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <%- include('partials/header') %>
+</head>
+
+
+<body class="mainpagebody">
+    <div class="main-page-container">
+    <div class="wizard-container">
+      <img class="main_image"
+        src="https://www.people-clipart.com/people_clipart_images/people_cartoon_wizard_in_sorcerers_robe_and_a_magic_wand_0521-1010-2714-0148_SMU.jpg">
+      <div class="bubble"> Hey There! I'm Wiz, The Quiz Wizard. I'm Super Excited to See What Quizzes You Create. In the
+        Meantime, Checkout Some Quizzes Other Users Have Created Below!
+      </div>
+    </div>
+
   <body>
    <div class="mainbody">
 
@@ -30,7 +42,6 @@
             <% if (rows) { %>
               <% for (let row of rows) { %>
               <section class="quiz_body">
-
                 <li id="subject"><%= row.subject %></li>
                 <li id="description"><%= row.description %></li>
                   <!-- Start Quiz -->
@@ -46,5 +57,5 @@
 
       </article>
   </body>
+  </body>
 </html>
-

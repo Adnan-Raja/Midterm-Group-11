@@ -2,64 +2,71 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Quiz!: My Quiz</title>
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/myquiz.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <title>Quiz Wizard</title>
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/myquiz.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/question.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
     <%- include('partials/header') %>
-  </head>
-  <header>
 
-  </header>
-  <body>
-      <article class="quiz_questions">
-        <div>
-          <p class="page_name"><b>My Quiz:</b></p>
-        <ul class="quiz_head">
-          <li><b>Subject</b></li>
-          <li><b>Description</b></li>
+</head>
+
+
+<!-- <body>
+
+  <!-- <div class="main-page-container2"> -->
+    <div class="wizard-container2">
+      <img class="main_image"
+        src="https://www.people-clipart.com/people_clipart_images/people_cartoon_wizard_in_sorcerers_robe_and_a_magic_wand_0521-1010-2714-0148_SMU.jpg">
+      <div class="bubble2"> Don't forget to share the quizzes you've created with your family and friends!
+    </div>
+  </body>
+
+  </span>
+</header>
+<body>
+    <article class="quiz_questions">
+      <div>
+      <ul class="quiz_head">
+        <li><b>Subject</b></li>
+        <li><b>Description</b></li>
+      </ul>
+      </div>
+      <div>
+      <ul class="quiz_list">
+        <% if (rows) { %>
+          <% for (let row of rows) { %>
+          <section class="quiz_body">
+            <li><%= row.subject %></li>
+           <li><%= row.description %></li>
+            <!-- <li><%= row.quizid %></li> -->
+            <div><% if (row.public) { %>
+              <section>
+                <div class="radio_button">
+                <button class="pupr_button" type="button" id="ajaxBtn" value=<%= [row.public, row.quizid] %>>Public</button>
+              </div>
+              </section>
+                <%  } else { %>
+                  <section>
+                    <div class="radio_button1">
+                      <button class="pupr_button" type="button" id="ajaxBtn1" value=<%= [row.public, row.quizid] %>>Private</button>
+                    </div>
+              </section>
+              <% } %></div>
+            <div><button class="article_button" type="submit"><a href="/quizpage/<%= row.quizid %>">Start Quiz</a></button></div>
+          </section>
+        <% } %>
+        <% } %>
         </ul>
         </div>
-        <div>
-        <ul class="quiz_list">
-          <% if (rows) { %>
-            <% for (let row of rows) { %>
-            <section class="quiz_body">
-              <li><%= row.subject %></li>
-             <li><%= row.description %></li>
-
-              <!-- <li><%= row.quizid %></li> -->
-              <div><% if (row.public) { %>
-                <section>
-                  <div class="radio_button">
-                  <button class="pupr_button" type="button" id="ajaxBtn" value=<%= [row.public, row.quizid] %>>Public</button>
-                </div>
-                </section>
-
-                  <%  } else { %>
-                    <section>
-                      <div class="radio_button1">
-                        <button class="pupr_button" type="button" id="ajaxBtn1" value=<%= [row.public, row.quizid] %>>Private</button>
-                      </div>
-                </section>
-                <% } %></div>
-              <div>
-                <!-- <button class="article_button" type="submit"><a href="/quizpage/<%= row.quizid %>">Start Quiz</a></button> -->
-                <button id="startquiz-button" class="article_button" type="submit"><a href="/quizpage/<%= row.quizid %>" class="article_button">Start Quiz</a></button>
-              </div>
-            </section>
-          <% } %>
-          <% } %>
-          </ul>
-          </div>
-      </article>
-  </body>
+    </article>
+</body>
 </html>
-
-
 
 
 
