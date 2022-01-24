@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Quizlett</title>
+    <title>Quiz!: My Quiz</title>
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/myquiz.css" type="text/css" />
@@ -12,12 +12,12 @@
     <%- include('partials/header') %>
   </head>
   <header>
-    <!-- Nav -->
 
   </header>
   <body>
       <article class="quiz_questions">
         <div>
+          <p class="page_name"><b>My Quiz:</b></p>
         <ul class="quiz_head">
           <li><b>Subject</b></li>
           <li><b>Description</b></li>
@@ -28,8 +28,8 @@
           <% if (rows) { %>
             <% for (let row of rows) { %>
             <section class="quiz_body">
-              <div class="width"> <li><%= row.subject %></li></div>
-              <div class="width"><li><%= row.description %></li></div>
+              <li><%= row.subject %></li>
+             <li><%= row.description %></li>
 
               <!-- <li><%= row.quizid %></li> -->
               <div><% if (row.public) { %>
@@ -46,9 +46,10 @@
                       </div>
                 </section>
                 <% } %></div>
-              <div><button class="article_button" type="submit">Start Quiz</button></div>
-
-
+              <div>
+                <!-- <button class="article_button" type="submit"><a href="/quizpage/<%= row.quizid %>">Start Quiz</a></button> -->
+                <button id="startquiz-button" class="article_button" type="submit"><a href="/quizpage/<%= row.quizid %>" class="article_button">Start Quiz</a></button>
+              </div>
             </section>
           <% } %>
           <% } %>
